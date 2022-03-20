@@ -31,10 +31,11 @@ export function Dashboard(){
                 </UserWapper>
             </Header>
             <Actions>
-                <ActionBubble type="agendar" title="Agendar"/>
-                <ActionBubble type="exames" title="Exames"/>
-                <ActionBubble type="receitas" title="Receitas"/>
-                <ActionBubble type="duvidas" title="Dúvidas"/>
+                <ActionBubble type="marcar" title="Marcar" subTitle="consulta/exames"/>
+                <ActionBubble type="agendar" title="Meus Agendamentos" subTitle=""/>
+                <ActionBubble type="exames" title="Exames" subTitle="(Resultados)"/>
+                <ActionBubble type="receitas" title="Receitas" subTitle=""/>
+                <ActionBubble type="duvidas" title="Dúvidas" subTitle=""/>
             </Actions>
         </Container>
     )

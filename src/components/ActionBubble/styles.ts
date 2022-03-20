@@ -30,7 +30,17 @@ export const Title = styled.Text`
     font-family: ${({theme}) => theme.fonts.medium};
     font-size: ${RFValue(14)}px;
     padding-top: 2px;
-    width: 80%;
+    width:  ${RFPercentage(18)}px;
+    text-align: center;
+
+`;
+
+export const SubTitle = styled.Text`
+    color: ${({theme}) => theme.colors.secondary};
+    font-family: ${({theme}) => theme.fonts.light_italic};
+    font-size: ${RFValue(11)}px;
+    padding-top: 2px;
+    width:  ${RFPercentage(17)}px;
     text-align: center;
 
 `;
