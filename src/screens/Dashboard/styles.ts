@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import { RFPercentage, RFValue } from'react-native-responsive-fontsize';
-import { Feather } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import {getStatusBarHeight} from 'react-native-iphone-x-helper';
 export const Container = styled.View`
 flex: 1;
@@ -51,9 +51,9 @@ export const UserName = styled.Text`
     font-family: ${({theme}) => theme.fonts.bold    };
 `;
 
-export const Icon = styled(Feather)`
+export const Icon = styled(Ionicons)`
     color: ${({theme}) => theme.colors.shape};
-    font-size: ${RFValue(24)}px;
+    font-size: ${RFValue(28)}px;
 `;
 
 export const Actions = styled.ScrollView.attrs({
@@ -64,4 +64,14 @@ export const Actions = styled.ScrollView.attrs({
     position: absolute;
     margin-top: ${RFPercentage(22)}px;
     
+`;
+
+export const ActionCards = styled.View`
+    flex: 1;
+    padding: 0 10px;
+    margin-top: ${RFPercentage(20)}px;
+    background-color: #DDDDDD;
+`;
+
+export const CardList = styled.FlatList`
 `;

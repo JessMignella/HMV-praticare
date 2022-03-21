@@ -1,11 +1,10 @@
 import styled from "styled-components/native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import {Feather} from "@expo/vector-icons"
+import {Ionicons} from "@expo/vector-icons"
 
 export const Container = styled.View`
     flex: 1;
     margin-right: 12px;
-    padding: 0 10px;
     flex-direction: row;
     align-items: flex-start;
 `;
@@ -45,7 +44,7 @@ export const SubTitle = styled.Text`
 
 `;
 
- export const Icon = styled(Feather)`
+ export const Icon = styled(Ionicons)`
      color: ${({theme}) => theme.colors.secondary};
-     font-size: ${RFValue(24)}px;
+     font-size: ${RFValue(28)}px;
  `;

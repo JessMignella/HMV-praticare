@@ -16,12 +16,12 @@ import {
  }
 
  const icon = {
-    agendar: 'calendar',
-    exames:  'activity',
-    receitas: 'file-text',
-    duvidas: 'help-circle',
-    atendimento: 'video',
-    marcar: 'plus-circle'
+    agendar: 'today-outline',
+    exames:  'flask-outline',
+    receitas: 'receipt-outline',
+    duvidas: 'help',
+    atendimento: 'videocam-outline',
+    marcar: 'checkmark-done-outline'
 }
 
 
