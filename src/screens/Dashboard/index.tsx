@@ -21,9 +21,10 @@ import {
 
 
 export function Dashboard(){
-    const data = [
+    const data= [
     {
-        key: 'notificacoes',
+        type: 'notify',
+        key: 'medicacao',
         icon: 'notifications',
         title: 'Medicação',
         description: 'Rivotril 2 mg | 10/03/2022 08:00',
@@ -31,7 +32,8 @@ export function Dashboard(){
         actionIcon: 'checkmark-outline'
     },
     {
-        key: 'notificacoes',
+        type:'notify',
+        key: 'pressao',
         icon: 'notifications',
         title: 'Aferir pressão',
         description: 'Tarefa: Após janta | Dr. Luiz Couto | 10/03/2022 20:00',
@@ -39,6 +41,7 @@ export function Dashboard(){
         actionIcon: 'checkmark-outline'
     },
     {
+        type: 'menu',
         key: 'tarefa',
         icon: 'list-outline',
         title: 'Tarefas',
@@ -46,19 +49,22 @@ export function Dashboard(){
         status: '',
         actionIcon: 'chevron-forward-outline'
     },
+
     {
-        key: 'tarefa',
-        icon: 'list-outline',
-        title: 'Tarefas',
-        description: '3/5 tarefas conclúidas | 1 atrasada',
+        type: 'menu',
+        key: 'chat',
+        icon: 'chatbubble-ellipses-outline',
+        title: 'Conversas',
+        description: 'Veja suas conversas anteriores ou envie uma mensagem',
         status: '',
         actionIcon: 'chevron-forward-outline'
     },
     {
-        key: 'tarefa',
-        icon: 'list-outline',
-        title: 'Tarefas',
-        description: '3/5 tarefas conclúidas | 1 atrasada',
+        type: 'menu',
+        key: 'doc',
+        icon: 'document-attach-outline',
+        title: 'Documentos',
+        description: 'Exames | receitas| prontuários |Anexos',
         status: '',
         actionIcon: 'chevron-forward-outline'
     },]
@@ -87,7 +93,7 @@ export function Dashboard(){
             <ActionCards>
                 <CardList
                 data={data}
-                renderItem ={({ item}) => <ActionCard data={item}/>}
+                renderItem ={({item}) => <ActionCard data={item}/>}
                 showsVerticalScrollIndicator= {false}
                 contentContainerStyle = {{
                     paddingBottom: getBottomSpace()

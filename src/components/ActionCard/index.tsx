@@ -12,15 +12,17 @@ import {
     Status,
 } from "./styles";
 
+interface Data {
+    type: 'notify' | 'menu';
+    key: string;
+    icon: string;
+    title: string;
+    description: string;
+    status: string;
+    actionIcon: string;
+}
 interface Props{
-    data:{
-        key: string;
-        icon: string;
-        title: string;
-        description: string;
-        status: string;
-        actionIcon: string;
-    }
+    data: Data;
 }
 
 
@@ -29,13 +31,13 @@ export function ActionCard({data}: Props){
         <Container>
             <ContentCard>
                 <Header> 
-                    <Icon name={data.icon}></Icon>
-                    <Title>{data.title}</Title>
+                    <Icon name={data.icon} type={data.type}></Icon>
+                    <Title type={data.type} >{data.title}</Title>
                     <Status>{data?.status}</Status>
                 </Header>
                 <Body>
                     <Description>{data.description}</Description>
-                   <ActionIcon name={data.actionIcon}></ActionIcon>
+                   <ActionIcon type={data.type} name={data.actionIcon}></ActionIcon>
                  </Body>
             </ContentCard>
         </Container>
