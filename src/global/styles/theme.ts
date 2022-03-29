@@ -1,4 +1,5 @@
 export default {
+    dark: false,
     colors: {
         primary: '#07518f',
         secondary: '#1E88E5',
@@ -6,7 +7,7 @@ export default {
         tertiary: '#ef6c00',
         quaternary: '#c81f66',
         
-        success: '#34af23', 
+        success: '#34AF23', 
         attention: '#6a1b9a',
 
         shape: '#FFFFFF',

@@ -1,7 +1,13 @@
 import styled from "styled-components/native";
+import { FlatList } from 'react-native';
 import { RFPercentage, RFValue } from'react-native-responsive-fontsize';
 import { Ionicons } from '@expo/vector-icons';
-import {getStatusBarHeight} from 'react-native-iphone-x-helper';
+import {getBottomSpace, getStatusBarHeight} from 'react-native-iphone-x-helper';
+import { BorderlessButton } from 'react-native-gesture-handler'
+
+import { CardListProps } from '.';
+
+
 export const Container = styled.View`
 flex: 1;
 background-color: ${( { theme }) => theme.colors.background} ;
@@ -48,7 +54,11 @@ export const UserGreetings = styled.Text`
 export const UserName = styled.Text`
  color: ${({theme}) => theme.colors.shape};
     font-size: ${RFValue(18)}px;
-    font-family: ${({theme}) => theme.fonts.bold    };
+    font-family: ${({theme}) => theme.fonts.bold  };
+`;
+
+export const LogoutButton = styled(BorderlessButton)`
+
 `;
 
 export const Icon = styled(Ionicons)`
@@ -60,10 +70,10 @@ export const Actions = styled.ScrollView.attrs({
     horizontal: true, 
     showsHorizontalScrollIndicator: false,
     contentContainerStyle:{padding: 15 }
+
 })`
     position: absolute;
     margin-top: ${RFPercentage(22)}px;
-    
 `;
 
 export const ActionCards = styled.View`
@@ -73,5 +83,11 @@ export const ActionCards = styled.View`
     background-color: #DDDDDD;
 `;
 
-export const CardList = styled.FlatList`
-`;
+export const CardList = styled(
+    FlatList as new () => FlatList<CardListProps>
+    ).attrs({
+        showsVerticalScrollIndicator: false,
+        contentContainerStyle: {
+            paddingBottom: getBottomSpace()
+        }
+})``;

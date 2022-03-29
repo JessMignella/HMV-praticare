@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { 
     Container,
@@ -26,11 +26,16 @@ import {
 
 
 export function ActionBubble({type, title, subTitle}:Props){
+        const [press, setPress] = useState(false);
+
     return (
         <Container>
-                <ActionContent>
-                    <Bubble>
-                        <Icon name={icon[type]} />
+                <ActionContent
+                    onPressIn={() => setPress(true)}
+                    onPressOut={() => setPress(false)}>
+                    <Bubble 
+                    isActive= {press}>
+                        <Icon name={icon[type]} isActive={press}/>
                     </Bubble>
                     <Title>{title}</Title>
                     <SubTitle>{subTitle}</SubTitle>

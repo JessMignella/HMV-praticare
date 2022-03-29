@@ -1,17 +1,14 @@
 import styled from "styled-components/native";
 import { Ionicons } from '@expo/vector-icons';
-import {RectButton} from 'react-native-gesture-handler';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 
-interface CategoryProps {
+interface CategoryProps{
     type: 'notify' | 'menu';
-    subType: 'tarefa' | 'doc' | 'chat' | 'dados';
+    subType: 'tarefa' | 'doc' | 'chat';
 }
-
-export const Container = styled(RectButton)<CategoryProps>`
-    background-color: ${({ theme, type }) =>
-      type === 'notify'? theme.colors.quaternary: theme.colors.shape};
+export const Container = styled.View`
+    background-color: ${({ theme }) => theme.colors.shape};
     border-radius: 5px;
     flex-direction:  row;
     justify-content: space-between;
@@ -29,23 +26,21 @@ export const Header = styled.View`
 
 export const Icon = styled(Ionicons)<CategoryProps>`
     color: ${({theme, type }) => 
-    type === 'notify'? theme.colors.shape: theme.colors.secondary};
+    type === 'notify'? theme.colors.tertiary: theme.colors.secondary};
     font-size: ${RFValue(20)}px;
 `;
 
 export const Title = styled.Text<CategoryProps>`
     color: ${({theme, type }) => 
-    type === 'notify'? theme.colors.shape: theme.colors.secondary};
+    type === 'notify'? theme.colors.tertiary: theme.colors.secondary};
     font-family: ${({theme}) => theme.fonts.bold};
     font-size: ${RFValue(20)}px;
     padding-left: 3px;
     width:  ${RFPercentage(36)}px;
-
-
 `;
-export const Description = styled.Text<CategoryProps>`
-    color:  ${({ theme, type }) =>
-        type === 'notify'? theme.colors.shape: theme.colors.text};
+
+export const Description = styled.Text`
+color: ${({theme}) => theme.colors.text};
     font-family: ${({theme}) => theme.fonts.light};
     font-size: ${RFValue(10)}px;
     width:  ${RFPercentage(40)}px;
@@ -53,22 +48,21 @@ export const Description = styled.Text<CategoryProps>`
     padding-left: 21px;
     text-align: left;
 `;
+
 export const  Body = styled.View`
 flex-direction: row;
 align-items: center;
 padding-bottom: ${RFValue(22)}px;
-
 `;
 
-export const Status = styled.Text<CategoryProps>`
-color:  ${({ theme, type }) =>
- type === 'notify'? theme.colors.shape: theme.colors.text};
+export const Status = styled.Text`
+color:  ${({ theme }) => theme.colors.text };
 font-family: ${({ theme }) => theme.fonts.light_italic};
 font-size: ${RFValue(10)}px;
 `;
 
 export const ActionIcon = styled(Ionicons)<CategoryProps>`
     color: ${({theme, type }) => 
-    type === 'notify'? theme.colors.shape: theme.colors.secondary};
+    type === 'notify'? theme.colors.text: theme.colors.secondary};
     font-size: ${RFValue(28)}px;
 `;

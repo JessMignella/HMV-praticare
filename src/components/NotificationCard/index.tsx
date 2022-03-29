@@ -12,7 +12,7 @@ import {
     Status,
 } from "./styles";
 
-export interface ActionCardProps {
+interface Data {
     type: 'notify' | 'menu';
     key: string;
     icon: string;
@@ -22,14 +22,13 @@ export interface ActionCardProps {
     actionIcon: string;
 }
 interface Props{
-    data: ActionCardProps;
-    onPress: () => void;
+    data: Data;
 }
 
 
-export function ActionCard({data, onPress}: Props){
+export function NotificationCard({data}: Props){
     return(
-        <Container onPress={onPress} type={data.type} >
+        <Container>
             <ContentCard>
                 <Header> 
                     <Icon name={data.icon} type={data.type}></Icon>
@@ -37,7 +36,7 @@ export function ActionCard({data, onPress}: Props){
                     <Status>{data?.status}</Status>
                 </Header>
                 <Body>
-                    <Description type={data.type} >{data.description}</Description>
+                    <Description>{data.description}</Description>
                    <ActionIcon type={data.type} name={data.actionIcon}></ActionIcon>
                  </Body>
             </ContentCard>
